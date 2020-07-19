@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Covid App</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="_to_">%1$s to %2$s</string>
+
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCuEVBMkxsXHhDihEXqSB8K3yozRWpxrvA</string>
+    <string name="map">Map</string>
+</resources>

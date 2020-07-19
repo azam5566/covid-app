@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- spacing -->
+    <dimen name="spacing0">0dp</dimen>
+    <dimen name="spacing1">4dp</dimen>
+    <dimen name="spacing2">8dp</dimen>
+    <dimen name="spacing3">12dp</dimen>
+    <dimen name="spacing4">16dp</dimen>
+    <dimen name="spacing5">20dp</dimen>
+    <dimen name="spacing6">24dp</dimen>
+    <dimen name="spacing7">30dp</dimen>
+    <dimen name="spacing8">36dp</dimen>
+    <dimen name="spacing9">42dp</dimen>
+    <dimen name="spacing10">50dp</dimen>
+    <dimen name="spacing11">64dp</dimen>
+    <dimen name="spacing12">88dp</dimen>
+    <dimen name="spacing13">100dp</dimen>
+    <dimen name="spacing14">120dp</dimen>
+    <dimen name="spacing15">150dp</dimen>
+    <dimen name="spacing16">180dp</dimen>
+
+    <!-- icon size -->
+    <dimen name="iconSmall">18dp</dimen>
+    <dimen name="iconMedium">24dp</dimen>
+    <dimen name="iconLarge">30dp</dimen>
+    <dimen name="iconXL">36dp</dimen>
+    <dimen name="iconXXL">48dp</dimen>
+    <dimen name="iconXXXL">64dp</dimen>
+
+    <!-- text dimensions -->
+    <dimen name="text_x2small">10sp</dimen>
+    <dimen name="text_x1small">11sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="text_medium">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_x1large">18sp</dimen>
+    <dimen name="text_x2large">20sp</dimen>
+    <dimen name="text_x3large">24sp</dimen>
+    <dimen name="text_x4large">30sp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
+
+</resources>

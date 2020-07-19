@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary -->
+    <color name="P500">#EFFAE4</color>
+    <color name="P700">#95D373</color>
+    <color name="P900">#52B71A</color>
+
+    <!-- Secondary -->
+    <color name="S000">#FFF</color>
+    <color name="S100">#F0F0F0</color>
+    <color name="S200">#c4c5c9</color>
+    <color name="S300">#a9aab1</color>
+    <color name="S400">#8d8e98</color>
+    <color name="S500">#73737e</color>
+    <color name="S600">#5e5c69</color>
+    <color name="S700">#4c4a57</color>
+    <color name="S800">#424242</color>
+    <color name="S900">#393c3f</color>
+
+    <!-- Ascent -->
+    <color name="colorDanger">#FF6D00</color>
+    <color name="colorSuccess">#00B100</color>
+    <color name="colorWarning">#FFD600</color>
+    <color name="colorAccent">#52B71A</color>
+
+
+    <color name="activeColor">#ff9605</color>
+
+    <!-- Greys -->
+    <color name="G000">#FFF</color>
+    <color name="G50">#f8f8f8</color>
+    <color name="G100">#dfe1e4</color>
+    <color name="G200">#c4c5c9</color>
+    <color name="G300">#a9aab1</color>
+    <color name="G400">#8d8e98</color>
+    <color name="G500">#73737e</color>
+    <color name="G600">#5e5c69</color>
+    <color name="G700">#4c4a57</color>
+    <color name="G800">#3c3e48</color>
+    <color name="G900">#424242</color>
+
+    <color name="text_color">#2D414B</color>
+    <color name="text_color_2">#5d7446</color>
+
+    <color name="white">#FFF</color>
+    <color name="black">#000</color>
+    <color name="transparent">#00000000</color>
+    <color name="light_orange">#FFE6C4</color>
+
+    <color name="g_blue">#4285F4</color>
+    <color name="g_red">#DB4437</color>
+    <color name="g_yellow">#F4B400</color>
+    <color name="g_green">#0F9D58</color>
+
+</resources>
