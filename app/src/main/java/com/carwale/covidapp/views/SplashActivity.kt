@@ -27,28 +27,8 @@ class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
             nextScreen()
         }, 2 * 1000)
 
-        CoroutineScope(IO).launch {
-            userService.getData().enqueue(object : Callback<DataResponse> {
-                override fun onFailure(call: Call<DataResponse>, t: Throwable) {
-                }
+        mViewModel.callApi()
 
-                override fun onResponse(
-                    call: Call<DataResponse>,
-                    response: Response<DataResponse>
-                ) {
-                    val res = response.body()
-
-                    CoroutineScope(IO).launch {
-                        res?.globalData?.toEntity()?.let { userDao.insertGlobalData(it) }
-
-                        res?.countriesData?.map { it.toEntity() }?.let {
-                            userDao.insertCountriesData(it)
-                        }
-                    }
-
-                }
-            })
-        }
     }
 
     override fun viewModelListener() {

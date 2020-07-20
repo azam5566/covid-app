@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Primary -->
-    <color name="P500">#EFFAE4</color>
-    <color name="P700">#95D373</color>
-    <color name="P900">#52B71A</color>
+    <color name="P500">#000</color>
+    <color name="P700">#000</color>
+    <color name="P900">#000</color>
 
     <!-- Secondary -->
     <color name="S000">#FFF</color>
@@ -16,6 +16,18 @@
     <color name="S700">#4c4a57</color>
     <color name="S800">#424242</color>
     <color name="S900">#393c3f</color>
+
+    <!-- d_custom -->
+    <color name="c_yellow_dark">#2E2208</color>
+    <color name="c_yellow">#FABE4E</color>
+
+    <color name="c_green_dark">#10230D</color>
+    <color name="c_green">#67B857</color>
+
+    <color name="c_purple_dark">#2A0C32</color>
+    <color name="c_purple">#D246F7</color>
+
+
 
     <!-- Ascent -->
     <color name="colorDanger">#FF6D00</color>

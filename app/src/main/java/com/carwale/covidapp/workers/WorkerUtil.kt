@@ -2,6 +2,7 @@ package com.carwale.covidapp.workers
 
 import androidx.work.*
 import com.carwale.covidapp.BaseApp
+import java.util.concurrent.TimeUnit
 
 class WorkerUtil {
     companion object {
@@ -9,15 +10,15 @@ class WorkerUtil {
         private val connectionConstraints =
             Constraints.Builder().setRequiredNetworkType(NetworkType.CONNECTED).build()
 
-//        fun initializeNotificationWorker(keys: Map<String, String>) {
-//            val data = Data.Builder()
-//            data.putAll(keys)
-//            workManager.enqueue(
-//                OneTimeWorkRequest.Builder(NotificationWorker::class.java)
-//                    .addTag(NOTIFICATION_SYNC)
-//                    .setConstraints(connectionConstraints)
-//                    .setInputData(data.build())
-//                    .build()
+//        fun initializeHourlySync() {
+//            workManager.enqueueUniquePeriodicWork(
+//                TIME_SYNC,
+//                ExistingPeriodicWorkPolicy.REPLACE,
+//                PeriodicWorkRequest.Builder(
+//                    HourlySyncWorker::class.java,
+//                    5,
+//                    TimeUnit.MINUTES
+//                ).addTag(TIME_SYNC).build()
 //            )
 //        }
     }

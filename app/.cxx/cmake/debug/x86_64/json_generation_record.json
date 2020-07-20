@@ -1,0 +1,134 @@
+[
+  {
+    "level": "INFO",
+    "message": "Start JSON generation. Platform version: 21 min SDK version: x86_64",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "No CMake version was specified in build.gradle. Using default version 3.10.2.",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "Trying to locate CMake in local SDK repository.",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "- CMake found in SDK at \u0027/Users/shaikhmohammad/Library/Android/sdk/cmake/3.10.2.4988404\u0027 had version \u00273.10.2\u0027",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "rebuilding JSON /Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/x86_64/android_gradle_build.json due to:",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "- expected json /Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/x86_64/android_gradle_build.json file is not present, will remove stale json folder",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "- missing previous command file /Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/x86_64/build_command.txt, will remove stale json folder",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "- command changed from previous, will remove stale json folder",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "created folder \u0027/Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/x86_64\u0027",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "executing cmake Executable : /Users/shaikhmohammad/Library/Android/sdk/cmake/3.10.2.4988404/bin/cmake\narguments : \n-H/Users/shaikhmohammad/Workspace/covid-app/app/cmake\n-DCMAKE_FIND_ROOT_PATH\u003d/Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/prefab/x86_64/prefab\n-DCMAKE_BUILD_TYPE\u003dDebug\n-DCMAKE_TOOLCHAIN_FILE\u003d/Users/shaikhmohammad/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake\n-DANDROID_ABI\u003dx86_64\n-DANDROID_NDK\u003d/Users/shaikhmohammad/Library/Android/sdk/ndk/21.1.6352462\n-DANDROID_PLATFORM\u003dandroid-21\n-DCMAKE_ANDROID_ARCH_ABI\u003dx86_64\n-DCMAKE_ANDROID_NDK\u003d/Users/shaikhmohammad/Library/Android/sdk/ndk/21.1.6352462\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d/Users/shaikhmohammad/Workspace/covid-app/app/build/intermediates/cmake/debug/obj/x86_64\n-DCMAKE_MAKE_PROGRAM\u003d/Users/shaikhmohammad/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_SYSTEM_VERSION\u003d21\n-B/Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/x86_64\n-GNinja\njvmArgs : \n\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "[\u003d\u003d \"CMake Server\" \u003d\u003d[\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"supportedProtocolVersions\":[{\"isExperimental\":true,\"major\":1,\"minor\":1}],\"type\":\"hello\"}\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "]\u003d\u003d \"CMake Server\" \u003d\u003d]\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "ERROR",
+    "message": "Not a directory: /Users/shaikhmohammad/Workspace/covid-app/app/cmake",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"handshake\",\n  \"cookie\": \"gradle-cmake-cookie\",\n  \"protocolVersion\": {\n    \"isExperimental\": true,\n    \"major\": 1,\n    \"minor\": 1\n  },\n  \"sourceDirectory\": \"/Users/shaikhmohammad/Workspace/covid-app/app/cmake\",\n  \"buildDirectory\": \"/Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/x86_64\",\n  \"generator\": \"Ninja\"\n}\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"gradle-cmake-cookie\",\"errorMessage\":\"Failed to activate protocol version: \\\"sourceDirectory\\\" is not a directory.\",\"inReplyTo\":\"handshake\",\"type\":\"error\"}\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "ERROR",
+    "message": "Failed to activate protocol version: \"sourceDirectory\" is not a directory.",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\n  \"type\": \"configure\",\n  \"cacheArguments\": [\n    \"\",\n    \"-DCMAKE_FIND_ROOT_PATH\\u003d/Users/shaikhmohammad/Workspace/covid-app/app/.cxx/cmake/debug/prefab/x86_64/prefab\",\n    \"-DCMAKE_BUILD_TYPE\\u003dDebug\",\n    \"-DCMAKE_TOOLCHAIN_FILE\\u003d/Users/shaikhmohammad/Library/Android/sdk/ndk/21.1.6352462/build/cmake/android.toolchain.cmake\",\n    \"-DANDROID_ABI\\u003dx86_64\",\n    \"-DANDROID_NDK\\u003d/Users/shaikhmohammad/Library/Android/sdk/ndk/21.1.6352462\",\n    \"-DANDROID_PLATFORM\\u003dandroid-21\",\n    \"-DCMAKE_ANDROID_ARCH_ABI\\u003dx86_64\",\n    \"-DCMAKE_ANDROID_NDK\\u003d/Users/shaikhmohammad/Library/Android/sdk/ndk/21.1.6352462\",\n    \"-DCMAKE_EXPORT_COMPILE_COMMANDS\\u003dON\",\n    \"-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\\u003d/Users/shaikhmohammad/Workspace/covid-app/app/build/intermediates/cmake/debug/obj/x86_64\",\n    \"-DCMAKE_MAKE_PROGRAM\\u003d/Users/shaikhmohammad/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja\",\n    \"-DCMAKE_SYSTEM_NAME\\u003dAndroid\",\n    \"-DCMAKE_SYSTEM_VERSION\\u003d21\"\n  ]\n}\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "{\"cookie\":\"\",\"errorMessage\":\"Waiting for type \\\"handshake\\\".\",\"inReplyTo\":\"configure\",\"type\":\"error\"}\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "ERROR",
+    "message": "Waiting for type \"handshake\".",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  },
+  {
+    "level": "INFO",
+    "message": "JSON generation completed with problem. Exception: com.android.ide.common.process.ProcessException: Error configuring CMake server (/Users/shaikhmohammad/Library/Android/sdk/cmake/3.10.2.4988404/bin).\r\n",
+    "file": "/Users/shaikhmohammad/Workspace/covid-app/app/cmake/CMakeLists.txt",
+    "tag": "debug|x86_64"
+  }
+]

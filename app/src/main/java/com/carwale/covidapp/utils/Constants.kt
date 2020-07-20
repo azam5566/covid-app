@@ -18,6 +18,7 @@ class Constants {
             const val  USER_NAME =  "USER_NAME"
             const val ONBOARDING_STATUS = "ONBOARDING_STATUS"
             const val LAST_ONLINE_TIME = "LAST_ONLINE_TIME"
+            const val GAP = "AIzaSyCuEVBMkxsXHhDihEXqSB8K3yozRWpxrvA"
         }
     }
 

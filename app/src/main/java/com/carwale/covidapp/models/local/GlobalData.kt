@@ -2,8 +2,9 @@ package com.carwale.covidapp.models.local
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.util.*
 
-@Entity
+@Entity(tableName = "global_data")
 data class GlobalData(@PrimaryKey var newConfirmed: Long?){
 
     constructor(
@@ -19,6 +20,7 @@ data class GlobalData(@PrimaryKey var newConfirmed: Long?){
         this.totalDeaths = totalDeaths
         this.newRecovered = newRecovered
         this.totalRecovered = totalRecovered
+        this.lastApiCalled = Calendar.getInstance().timeInMillis
     }
 
     var totalConfirmed: Long? = null
@@ -26,4 +28,5 @@ data class GlobalData(@PrimaryKey var newConfirmed: Long?){
     var totalDeaths: Long? = null
     var newRecovered: Long? = null
     var totalRecovered: Long? = null
+    var lastApiCalled: Long? = null
 }

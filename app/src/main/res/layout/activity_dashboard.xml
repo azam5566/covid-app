@@ -9,19 +9,57 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@color/black"
         android:layout_height="match_parent"
         tools:context=".views.dashboard.DashboardActivity">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_circle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="virus.json"
+            app:lottie_loop="true" />
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="COUNTRY"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/loading_circle"
+            app:layout_constraintStart_toEndOf="@+id/loading_circle" />
+
+        <TextView
+            android:id="@+id/last_updated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="last updated at 12.32pm"
+            android:textColor="@color/S500"
+            android:textStyle="italic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/header" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/border_all_sides_grey"
-            android:backgroundTint="@color/g_red"
+            android:backgroundTint="#2E2208"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/last_updated">
 
             <TextView
                 android:id="@+id/total_cases"
@@ -30,8 +68,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="45000"
-                android:textColor="@color/white"
+                android:text="4500000"
+                android:textColor="#FABE4E"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +84,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="Total Cases"
-                android:textColor="@color/white"
+                android:textColor="#FABE4E"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +97,7 @@
             android:layout_width="115dp"
             android:layout_height="wrap_content"
             android:background="@drawable/border_all_sides_grey"
-            android:backgroundTint="@color/colorSuccess"
+            android:backgroundTint="#10230D"
             app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
             app:layout_constraintEnd_toStartOf="@+id/constraintLayout4"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout2">
@@ -72,7 +110,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="42000"
-                android:textColor="@color/white"
+                android:textColor="#67B857"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -87,7 +125,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="Recovered"
-                android:textColor="@color/white"
+                android:textColor="#67B857"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:background="@drawable/border_all_sides_grey"
-            android:backgroundTint="@color/S800"
+            android:backgroundTint="#2A0C32"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/constraintLayout2">
 
@@ -113,7 +151,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:text="320"
-                android:textColor="@color/white"
+                android:textColor="#D246F7"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -128,7 +166,7 @@
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
                 android:text="Deaths"
-                android:textColor="@color/white"
+                android:textColor="#D246F7"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -139,7 +177,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout5"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -151,16 +189,57 @@
                 android:id="@+id/filter_by"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="visible"
                 android:text="Filter By"
+                android:textColor="#8852FC"
+                app:chipBackgroundColor="#1C1133"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/cardView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="116dp"
+                android:layout_height="30dp"
+                android:backgroundTint="@color/g_red"
+                android:visibility="gone"
+                app:cardCornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="@dimen/spacing1"
+                    android:src="@drawable/ic_outline_cancel_24"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="@dimen/spacing3"
+                    android:text="Clear Filters"
+                    android:textColor="@color/white" />
+            </androidx.cardview.widget.CardView>
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="24dp"
             android:background="@drawable/border_all_sides_grey"
@@ -174,6 +253,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/border_top_right_left_curved"
+                android:backgroundTint="#012126"
                 android:paddingTop="@dimen/spacing2"
                 android:paddingBottom="@dimen/spacing2"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -187,7 +267,9 @@
                     android:layout_marginEnd="8dp"
                     android:text="COUNTRY"
                     android:textAlignment="center"
+                    android:textColor="#1AAABA"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/figure_2"
                     app:layout_constraintHorizontal_weight="1"
                     app:layout_constraintStart_toStartOf="parent"
@@ -201,7 +283,9 @@
                     android:layout_marginEnd="8dp"
                     android:text="TOTAL CASES"
                     android:textAlignment="center"
+                    android:textColor="#1AAABA"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/figure_3"
                     app:layout_constraintHorizontal_weight="1"
                     app:layout_constraintStart_toEndOf="@id/figure_1"
@@ -215,7 +299,9 @@
                     android:layout_marginEnd="8dp"
                     android:text="DEATHS"
                     android:textAlignment="center"
+                    android:textColor="#1AAABA"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@id/figure_4"
                     app:layout_constraintHorizontal_weight="1"
                     app:layout_constraintStart_toEndOf="@id/figure_2"
@@ -228,7 +314,9 @@
                     android:layout_marginStart="8dp"
                     android:text="RECOVERED"
                     android:textAlignment="center"
+                    android:textColor="#1AAABA"
                     android:textSize="12sp"
+                    android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_weight="1"
                     app:layout_constraintStart_toEndOf="@id/figure_3"
@@ -239,6 +327,8 @@
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
+                android:background="#03272C"
+                android:backgroundTint="#03272C"
                 android:clipToPadding="false"
                 android:paddingBottom="@dimen/spacing1"
                 app:layout_constraintBottom_toTopOf="@+id/view"
@@ -251,6 +341,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="4dp"
                 android:background="@drawable/border_bottom_left_right_curved"
+                android:backgroundTint="#03272C"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />

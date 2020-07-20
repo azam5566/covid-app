@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "779f454aa52028a07ee9c2bb8c21d1d9",
+    "identityHash": "e9da15730b10c8d4f0bb2fd5a5a7b84c",
     "entities": [
       {
-        "tableName": "GlobalData",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`totalConfirmed` INTEGER, `newDeaths` INTEGER, `totalDeaths` INTEGER, `newRecovered` INTEGER, `totalRecovered` INTEGER, `newConfirmed` INTEGER, PRIMARY KEY(`newConfirmed`))",
+        "tableName": "global_data",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`totalConfirmed` INTEGER, `newDeaths` INTEGER, `totalDeaths` INTEGER, `newRecovered` INTEGER, `totalRecovered` INTEGER, `lastApiCalled` INTEGER, `newConfirmed` INTEGER, PRIMARY KEY(`newConfirmed`))",
         "fields": [
           {
             "fieldPath": "totalConfirmed",
@@ -35,6 +35,12 @@
           {
             "fieldPath": "totalRecovered",
             "columnName": "totalRecovered",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "lastApiCalled",
+            "columnName": "lastApiCalled",
             "affinity": "INTEGER",
             "notNull": false
           },
@@ -132,7 +138,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '779f454aa52028a07ee9c2bb8c21d1d9')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e9da15730b10c8d4f0bb2fd5a5a7b84c')"
     ]
   }
 }

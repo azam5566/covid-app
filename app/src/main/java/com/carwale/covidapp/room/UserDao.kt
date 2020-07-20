@@ -20,6 +20,9 @@ interface UserDao {
     @Query("SELECT SUM(totalConfirmed) FROM countries_data")
     fun getLiveDataTotalCases(): LiveData<Long>
 
+    @Query("SELECT * FROM global_data")
+    fun getLiveDataGlobalData(): LiveData<GlobalData>
+
     @Query("SELECT SUM(totalDeaths) FROM countries_data")
     fun getLiveDataTotalDeaths(): LiveData<Long>
 
@@ -60,7 +63,28 @@ interface UserDao {
     @Query("SELECT * FROM countries_data ORDER BY totalRecovered ASC")
     fun getAllDataSortRecoveredASC(): LiveData<List<CountriesData>>
 
-    @Query("SELECT * FROM countries_data WHERE totalConfirmed between :casesStart and :casesEnd and totalDeaths between :deathStart and :deathEnd and totalRecovered between :recovStart and :recovEnd ORDER BY totalConfirmed DESC")
-    fun getAllDataFiltered(casesStart : Long?, casesEnd : Long?, deathStart : Long?, deathEnd : Long?, recovStart : Long?, recovEnd : Long?): LiveData<List<CountriesData>>
+    @Query("SELECT * FROM countries_data WHERE (totalConfirmed <= :casesEnd and totalConfirmed >= :casesStart) and (totalDeaths >= :deathStart and totalDeaths <= :deathEnd) and (totalRecovered >= :recovStart and totalRecovered <= :recovEnd) ORDER BY totalConfirmed ASC ")
+    fun filterAll(casesStart : Long?, casesEnd : Long?,deathStart : Long?, deathEnd : Long?, recovStart : Long?, recovEnd : Long?): LiveData<List<CountriesData>>
+
+    @Query("SELECT * FROM countries_data WHERE totalConfirmed >= :casesStart and totalConfirmed <= :casesEnd ORDER BY totalConfirmed ASC")
+    fun filterTotalConfirmed(casesStart : Long?, casesEnd : Long?): LiveData<List<CountriesData>>
+
+    @Query("SELECT * FROM countries_data WHERE totalDeaths >= :deathStart and totalDeaths <= :deathEnd ORDER BY totalDeaths ASC")
+    fun filterTotalDeaths(deathStart: Long?, deathEnd: Long?): LiveData<List<CountriesData>>
+
+    @Query("SELECT * FROM countries_data WHERE totalRecovered >= :recovStart and totalRecovered <= :recovEnd ORDER BY totalRecovered ASC")
+    fun filterTotalRecov(recovStart: Long?, recovEnd: Long?): LiveData<List<CountriesData>>
+
+    @Query("SELECT * FROM countries_data WHERE (totalConfirmed >= :casesStart and totalConfirmed <= :casesEnd) and (totalRecovered >= :deathStart and totalRecovered <= :deathEnd) ORDER BY totalRecovered ASC")
+    fun filterTotalCasesDeaths(casesStart: Long?, casesEnd: Long?, deathStart: Long?, deathEnd: Long?): LiveData<List<CountriesData>>
+
+    @Query("SELECT * FROM countries_data WHERE (totalConfirmed >= :casesStart and totalConfirmed <= :casesEnd) and (totalRecovered >= :recovStart and totalRecovered <= :recovEnd) ORDER BY totalRecovered ASC")
+    fun filterTotalCasesRecov(casesStart: Long?, casesEnd: Long?, recovStart: Long?, recovEnd: Long?): LiveData<List<CountriesData>>
+
+    @Query("SELECT * FROM countries_data WHERE (totalRecovered >= :recovStart and totalRecovered <= :recovEnd) and ( totalDeaths >= :deathStart and totalDeaths <= :deathEnd) ORDER BY totalRecovered ASC")
+    fun filterTotalRecovDeaths(deathStart: Long?, deathEnd: Long?, recovStart: Long?, recovEnd: Long?): LiveData<List<CountriesData>>
+
+
+    //deathStart : Long?, deathEnd : Long?, recovStart : Long?, recovEnd : Long?
 
 }
