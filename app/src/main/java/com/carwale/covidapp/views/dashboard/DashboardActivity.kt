@@ -1,8 +1,8 @@
 package com.carwale.covidapp.views.dashboard
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
-import android.os.Handler
 import android.view.View
 import android.widget.EditText
 import androidx.core.content.ContextCompat
@@ -11,11 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.carwale.covidapp.R
 import com.carwale.covidapp.base.BaseActivity
 import com.carwale.covidapp.databinding.ActivityDashboardBinding
-import com.carwale.covidapp.models.DataResponse
 import com.carwale.covidapp.utils.Constants
-import com.carwale.covidapp.utils.extensions.READABLE_FORMAT
 import com.carwale.covidapp.utils.extensions.READABLE_FORMAT_WITH_DATE
-import com.carwale.covidapp.utils.extensions.showMessage
 import com.carwale.covidapp.utils.extensions.toDateFormat
 import com.carwale.covidapp.utils.shared_prefrence.SharedPref
 import com.carwale.covidapp.views.dashboard.adapters.CountryListAdapter
@@ -23,36 +20,22 @@ import com.carwale.covidapp.views.locations.MapsActivity
 import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
-import kotlinx.android.synthetic.*
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.util.*
 
 class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewModel>() {
     private lateinit var countryListAdapter: CountryListAdapter
-    var listSortedBy = ""
+    private var listSortedBy = ""
     override fun getLayoutId() = R.layout.activity_dashboard
 
     override fun getViewModel() = DashboardViewModel::class.java
 
+    @SuppressLint("SetTextI18n")
     override fun onBinding() {
         countryListAdapter = CountryListAdapter(this)
-        val pref = SharedPref.getInstance()
 
-        userDao.getLiveDataTotalCases().observe(this, Observer {
-            mBinding.totalCases.text = it.toString()
-        })
-
-        userDao.getLiveDataTotalDeaths().observe(this, Observer {
-            mBinding.totalDeaths.text = it.toString()
-        })
-
-        userDao.getLiveDataTotalRecovered().observe(this, Observer {
-            mBinding.totalRecov.text = it.toString()
+        userDao.getLiveDataTotal().observe(this, Observer {
+            mBinding.totalCases.text = it.sumCases.toString()
+            mBinding.totalDeaths.text = it.sumDeaths.toString()
+            mBinding.totalRecov.text = it.sumRecov.toString()
         })
 
         userDao.getLiveDataGlobalData().observe(this, Observer {
@@ -73,26 +56,25 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
 
         userDao.getAllData().observe(this, Observer {
             val (myCountryData, allOther) = it.partition { data ->
-                data.Country == SharedPref.getInstance()
-                    .getStringPreference(Constants.Location.COUNTRY_NAME)
+                data.Country.contains(SharedPref.getInstance()
+                    .getStringPreference(Constants.Location.COUNTRY_NAME))
             }
-//            countryListAdapter.populate(it.toMutableList())
             countryListAdapter.populate((myCountryData + allOther).toMutableList(), false)
         })
 
         mBinding.figure1.setOnClickListener {
             mBinding.recyclerView.removeAllViewsInLayout()
 
-            if (listSortedBy == "descending"){
+            if (listSortedBy == Constants.Range.DESCENDING){
                 userDao.getAllDataSortCountryASC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "ascending"
+                    listSortedBy = Constants.Range.ASCENDING
                 })
             }
             else{
                 userDao.getAllDataSortCountryDESC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "descending"
+                    listSortedBy = Constants.Range.DESCENDING
                 })
             }
         }
@@ -100,16 +82,16 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
         mBinding.figure2.setOnClickListener {
             mBinding.recyclerView.removeAllViewsInLayout()
 
-            if (listSortedBy == "descending"){
+            if (listSortedBy == Constants.Range.DESCENDING){
                 userDao.getAllDataSortCasesASC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "ascending"
+                    listSortedBy = Constants.Range.ASCENDING
                 })
             }
             else{
                 userDao.getAllDataSortCasesDESC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "descending"
+                    listSortedBy = Constants.Range.DESCENDING
                 })
             }
         }
@@ -117,16 +99,16 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
         mBinding.figure3.setOnClickListener {
             mBinding.recyclerView.removeAllViewsInLayout()
 
-            if (listSortedBy == "descending"){
+            if (listSortedBy == Constants.Range.DESCENDING){
                 userDao.getAllDataSortDeathsASC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "ascending"
+                    listSortedBy = Constants.Range.ASCENDING
                 })
             }
             else{
                 userDao.getAllDataSortDeathsDESC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "descending"
+                    listSortedBy = Constants.Range.DESCENDING
                 })
             }
         }
@@ -134,16 +116,16 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
         mBinding.figure4.setOnClickListener {
             mBinding.recyclerView.removeAllViewsInLayout()
 
-            if (listSortedBy == "descending"){
+            if (listSortedBy == Constants.Range.DESCENDING){
                 userDao.getAllDataSortRecoveredASC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "ascending"
+                    listSortedBy = Constants.Range.ASCENDING
                 })
             }
             else{
                 userDao.getAllDataSortRecoveredDESC().observe(this, Observer {
                     countryListAdapter.populate(it.toMutableList(), true)
-                    listSortedBy = "descending"
+                    listSortedBy = Constants.Range.DESCENDING
                 })
             }
         }
@@ -228,9 +210,9 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     if (casesStart != null && deathStart != null && recovStart != null){
                         if (casesStart != null && deathStart != null && recovStart != null && casesEnd != null && deathEnd != null && recovEnd != null){
                         // all fields search
-                            userDao.filterAll(casesStart, casesEnd, deathStart, deathEnd, recovStart, recovEnd).observe(this, Observer {
+                            userDao.filterAll(casesStart, casesEnd, deathStart, deathEnd, recovStart, recovEnd).observe(this, Observer { list ->
                                 mBinding.recyclerView.removeAllViewsInLayout()
-                                countryListAdapter.populate(it.toMutableList(), false)
+                                countryListAdapter.populate(list.toMutableList(), false)
                                 dialogBuilder.dismiss()
                             })
                             mBinding.chipGroup.removeAllViewsInLayout()
@@ -254,9 +236,9 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     else if(casesStart != null && deathStart != null){
                         if (casesStart != null && deathStart != null && casesEnd != null && deathEnd != null){
                             //2
-                            userDao.filterTotalCasesDeaths(casesStart,casesEnd,deathStart, deathEnd).observe(this, Observer {
+                            userDao.filterTotalCasesDeaths(casesStart,casesEnd,deathStart, deathEnd).observe(this, Observer { list ->
                                 mBinding.recyclerView.removeAllViewsInLayout()
-                                countryListAdapter.populate(it.toMutableList(), false)
+                                countryListAdapter.populate(list.toMutableList(), false)
                                 dialogBuilder.dismiss()
                             })
                             mBinding.chipGroup.removeAllViewsInLayout()
@@ -278,9 +260,9 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     else if(casesStart != null && recovStart != null){
                         if (casesStart != null && recovStart != null && casesEnd != null && recovEnd != null){
                             //2
-                            userDao.filterTotalCasesRecov(casesStart,casesEnd,recovStart, recovEnd).observe(this, Observer {
+                            userDao.filterTotalCasesRecov(casesStart,casesEnd,recovStart, recovEnd).observe(this, Observer { list ->
                                 mBinding.recyclerView.removeAllViewsInLayout()
-                                countryListAdapter.populate(it.toMutableList(), false)
+                                countryListAdapter.populate(list.toMutableList(), false)
                                 dialogBuilder.dismiss()
                             })
                             mBinding.chipGroup.removeAllViewsInLayout()
@@ -302,9 +284,9 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     else if(deathStart != null && recovStart != null){
                         if (deathStart != null && recovStart != null && deathEnd != null && recovEnd != null){
                             //2
-                            userDao.filterTotalRecovDeaths(deathStart,deathEnd,recovStart, recovEnd).observe(this, Observer {
+                            userDao.filterTotalRecovDeaths(deathStart,deathEnd,recovStart, recovEnd).observe(this, Observer { list ->
                                 mBinding.recyclerView.removeAllViewsInLayout()
-                                countryListAdapter.populate(it.toMutableList(), false)
+                                countryListAdapter.populate(list.toMutableList(), false)
                                 dialogBuilder.dismiss()
                             })
 
@@ -325,9 +307,9 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     }
                     else if(deathStart != null && deathEnd != null){
                         //1
-                        userDao.filterTotalDeaths(deathStart, deathEnd).observe(this, Observer {
+                        userDao.filterTotalDeaths(deathStart, deathEnd).observe(this, Observer { list ->
                             mBinding.recyclerView.removeAllViewsInLayout()
-                            countryListAdapter.populate(it.toMutableList(), false)
+                            countryListAdapter.populate(list.toMutableList(), false)
                             dialogBuilder.dismiss()
                         })
                         mBinding.chipGroup.removeAllViewsInLayout()
@@ -341,9 +323,9 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     }
                     else if(casesStart != null && casesEnd != null){
                         //1
-                        userDao.filterTotalConfirmed(casesStart, casesEnd).observe(this, Observer {
-                                mBinding.recyclerView.removeAllViewsInLayout()
-                                countryListAdapter.populate(it.toMutableList(), false)
+                        userDao.filterTotalConfirmed(casesStart, casesEnd).observe(this, Observer { list ->
+                            mBinding.recyclerView.removeAllViewsInLayout()
+                                countryListAdapter.populate(list.toMutableList(), false)
                                 dialogBuilder.dismiss()
                             })
                         mBinding.chipGroup.removeAllViewsInLayout()
@@ -357,9 +339,9 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     }
                     else if(recovStart != null && recovEnd != null){
                         //1
-                        userDao.filterTotalRecov(recovStart, recovEnd).observe(this, Observer {
+                        userDao.filterTotalRecov(recovStart, recovEnd).observe(this, Observer { list ->
                             mBinding.recyclerView.removeAllViewsInLayout()
-                            countryListAdapter.populate(it.toMutableList(), false)
+                            countryListAdapter.populate(list.toMutableList(), false)
                             dialogBuilder.dismiss()
                         })
                         mBinding.chipGroup.removeAllViewsInLayout()

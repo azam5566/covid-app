@@ -5,6 +5,7 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class GlobalDataResponse {
+
     @SerializedName("NewConfirmed")
     @Expose
     var newConfirmed: Long? = null

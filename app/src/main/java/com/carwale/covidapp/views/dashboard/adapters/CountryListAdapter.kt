@@ -1,6 +1,5 @@
 package com.carwale.covidapp.views.dashboard.adapters
 
-import android.R.attr.data
 import android.content.Context
 import android.graphics.Typeface
 import android.view.LayoutInflater

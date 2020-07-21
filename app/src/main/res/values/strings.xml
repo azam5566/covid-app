@@ -7,4 +7,31 @@
 
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyAh1Z5OP5I--OUu4KLxhqHdHzTT3DP6MUQ</string>
     <string name="map">Map</string>
+    <string name="country">COUNTRY</string>
+    <string name="last_updated_at_12_32pm">last updated at 12.32pm</string>
+    <string name="_4500000">4500000</string>
+    <string name="total_cases">Total Cases</string>
+    <string name="_42000">42000</string>
+    <string name="recovered">Recovered</string>
+    <string name="_320">320</string>
+    <string name="deaths">Deaths</string>
+    <string name="filter_by">Filter By</string>
+    <string name="clear_filters">Clear Filters</string>
+    <string name="total_cases_u">TOTAL CASES</string>
+    <string name="deaths_u">DEATHS</string>
+    <string name="recovered_u">RECOVERED</string>
+    <string name="change_location">Change Location</string>
+    <string name="current_location">Current Location</string>
+    <string name="pin">pin</string>
+    <string name="sanpada">Sanpada</string>
+    <string name="sector_5_plot_no_66_sads_dwdx_ewwsd_ew">Sector 5, Plot no 66 sads dwdx ewwsd ew</string>
+    <string name="set_location">Set Location</string>
+    <string name="covid_app">Covid App</string>
+    <string name="search">search</string>
+    <string name="search_for_place">Search for Place</string>
+    <string name="total_cases_between">Total Cases between</string>
+    <string name="to">TO</string>
+    <string name="total_deaths_between">Total Deaths between</string>
+    <string name="total_recovered_between">Total Recovered between</string>
+    <string name="total">TOTAL</string>
 </resources>

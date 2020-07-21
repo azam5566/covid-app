@@ -2,7 +2,6 @@ package com.carwale.covidapp.workers
 
 import androidx.work.*
 import com.carwale.covidapp.BaseApp
-import java.util.concurrent.TimeUnit
 
 class WorkerUtil {
     companion object {

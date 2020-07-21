@@ -1,6 +1,5 @@
 package com.carwale.covidapp.views.locations
 
-import android.Manifest
 import android.app.Activity
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -33,16 +32,16 @@ import com.google.android.libraries.places.widget.model.AutocompleteActivityMode
 import com.google.android.material.snackbar.Snackbar
 import java.io.IOException
 
+@Suppress("DEPRECATION")
 class MapsActivity : BaseActivity<ActivityMapsBinding, MapViewModel>(), OnMapReadyCallback,
     GoogleMap.OnMarkerClickListener,
     GoogleMap.OnCameraMoveListener, GoogleMap.OnCameraIdleListener {
-    private val REQUESTED_PERMISSION = Manifest.permission.ACCESS_FINE_LOCATION
     private val REQUEST_CODE = 3
     private val AUTOCOMPLETE_REQUEST_CODE = 1
 
     private lateinit var map: GoogleMap
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    var fromApp = false
+    private var fromApp = false
 
     override fun getLayoutId(): Int = R.layout.activity_maps
     override fun getViewModel(): Class<MapViewModel> = MapViewModel::class.java
@@ -65,7 +64,7 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapViewModel>(), OnMapRea
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
         }
         mBinding.setLocation.setOnClickListener {
-            if (SharedPref.getInstance().getStringPreference(Constants.Location.NAME)
+            if (SharedPref.getInstance().getStringPreference(Constants.Location.COUNTRY_NAME)
                     .isNotEmpty()
             ) {
                 if (fromApp) {
@@ -92,7 +91,6 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapViewModel>(), OnMapRea
     override fun onCameraMove() {
         map.clear()
         mBinding.imgLocationPinUp.visibility = View.VISIBLE
-//        getAddress(map.cameraPosition.target)
     }
 
     override fun onCameraIdle() {
@@ -132,7 +130,7 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapViewModel>(), OnMapRea
         }
     }
 
-    fun plotMap() {
+    private fun plotMap() {
         val pref = SharedPref.getInstance()
         val locality = pref.getStringPreference(Constants.Location.NAME)
         val address = pref.getStringPreference(Constants.Location.ADDRESS)
@@ -264,12 +262,12 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapViewModel>(), OnMapRea
                 countryName = address.countryName
             }
         } catch (e: IOException) {
-            Log.e("MapsActivity", e.localizedMessage)
+            Log.e("MapsActivity", e.localizedMessage ?: "")
         }
         updateData(latLng, address?.locality, addressText, countryCode, countryName)
     }
 
-    fun updateData(latLng: LatLng, locality: String?, address: String, countryCode : String, countryName : String) {
+    private fun updateData(latLng: LatLng, locality: String?, address: String, countryCode : String, countryName : String) {
         mBinding.tvLocality.apply {
             visibility = View.VISIBLE
             text = locality

@@ -44,7 +44,7 @@
                     android:textStyle="bold"
                     android:layout_marginTop="@dimen/spacing6"
                     android:layout_gravity="center"
-                    android:text="Covid App"/>
+                    android:text="@string/covid_app"/>
             </LinearLayout>
 
         </FrameLayout>

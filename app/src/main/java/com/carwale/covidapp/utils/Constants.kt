@@ -40,6 +40,8 @@ class Constants {
         }
     }
 
+
+
     interface Location{
         companion object{
             const val COUNTRY_NAME = "COUNTRY_NAME"
@@ -48,6 +50,12 @@ class Constants {
             const val LAT = "LAT"
             const val LONG = "LONG"
             const val NAME = "NAME"
+        }
+    }
+    interface Range{
+        companion object{
+            const val ASCENDING = "ASCENDING"
+            const val DESCENDING = "DESCENDING"
         }
     }
 

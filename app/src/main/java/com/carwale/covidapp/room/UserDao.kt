@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.carwale.covidapp.models.TotalData
 import com.carwale.covidapp.models.local.CountriesData
 import com.carwale.covidapp.models.local.GlobalData
 
@@ -17,17 +18,11 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertCountriesData(countryData : List<CountriesData>)
 
-    @Query("SELECT SUM(totalConfirmed) FROM countries_data")
-    fun getLiveDataTotalCases(): LiveData<Long>
+    @Query("SELECT SUM(totalConfirmed) as sumCases, SUM(totalDeaths) as sumDeaths, SUM(totalRecovered) as sumRecov FROM countries_data")
+    fun getLiveDataTotal(): LiveData<TotalData>
 
     @Query("SELECT * FROM global_data")
     fun getLiveDataGlobalData(): LiveData<GlobalData>
-
-    @Query("SELECT SUM(totalDeaths) FROM countries_data")
-    fun getLiveDataTotalDeaths(): LiveData<Long>
-
-    @Query("SELECT SUM(totalRecovered) FROM countries_data")
-    fun getLiveDataTotalRecovered(): LiveData<Long>
 
     @Query("SELECT * FROM countries_data WHERE totalConfirmed > 0 ORDER BY totalConfirmed DESC")
     fun getAllData(): LiveData<List<CountriesData>>

@@ -5,17 +5,10 @@ import android.os.Handler
 import com.carwale.covidapp.R
 import com.carwale.covidapp.base.BaseActivity
 import com.carwale.covidapp.databinding.ActivitySplashBinding
-import com.carwale.covidapp.models.DataResponse
 import com.carwale.covidapp.utils.Constants
 import com.carwale.covidapp.utils.shared_prefrence.SharedPref
 import com.carwale.covidapp.views.dashboard.DashboardActivity
 import com.carwale.covidapp.views.locations.MapsActivity
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers.IO
-import kotlinx.coroutines.launch
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class SplashActivity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
     override fun getLayoutId() = R.layout.activity_splash
