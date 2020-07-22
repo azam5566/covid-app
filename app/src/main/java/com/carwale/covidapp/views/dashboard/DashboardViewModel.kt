@@ -1,6 +1,7 @@
 package com.carwale.covidapp.views.dashboard
 
 import android.os.Handler
+import android.util.EventLog
 import com.carwale.covidapp.base.BaseViewModel
 import com.carwale.covidapp.models.DataResponse
 import kotlinx.coroutines.CoroutineScope
@@ -31,10 +32,10 @@ class DashboardViewModel : BaseViewModel(){
                                 userDao.insertCountriesData(it)
                             }
                         }
-
                     }
                 })
             }
         }, 120 * 1000)
     }
+
 }

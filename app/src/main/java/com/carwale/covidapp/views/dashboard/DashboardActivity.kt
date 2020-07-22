@@ -20,6 +20,7 @@ import com.carwale.covidapp.views.locations.MapsActivity
 import com.google.android.material.chip.Chip
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.snackbar.Snackbar
+import org.jetbrains.annotations.TestOnly
 
 class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewModel>() {
     private lateinit var countryListAdapter: CountryListAdapter
@@ -155,6 +156,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
 
             dialogBuilder.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
 
+                //filter input validations
                 if (!dialogView?.findViewById<EditText>(R.id.cases_start)?.text.isNullOrEmpty()){
                     casesStart = dialogView?.findViewById<EditText>(R.id.cases_start)?.text.toString().trim().toLong()
                 }
@@ -206,6 +208,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     dialogBuilder.show()
                 }
 
+                //filter input validations
                 if(casesStart != null || deathStart != null || recovStart != null){
                     if (casesStart != null && deathStart != null && recovStart != null){
                         if (casesStart != null && deathStart != null && recovStart != null && casesEnd != null && deathEnd != null && recovEnd != null){
@@ -376,7 +379,6 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
                     data.Country == SharedPref.getInstance()
                         .getStringPreference(Constants.Location.COUNTRY_NAME)
                 }
-//            countryListAdapter.populate(it.toMutableList())
                 countryListAdapter.populate((myCountryData + allOther).toMutableList(), false)
             })
         }
@@ -385,5 +387,10 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
     }
 
     override fun viewModelListener() {
+    }
+
+    @TestOnly
+    fun setTestViewModel(testViewModel: DashboardViewModel) {
+        val viewModel = testViewModel
     }
 }
