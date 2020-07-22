@@ -371,7 +371,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
         }
 
         mBinding.cardView.setOnClickListener {
-            mBinding.chipGroup.visibility = View.GONE
+            mBinding.chipGroup.removeAllViewsInLayout()
             mBinding.filterBy.visibility = View.VISIBLE
             mBinding.cardView.visibility = View.GONE
             userDao.getAllData().observe(this, Observer {

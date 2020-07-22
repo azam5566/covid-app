@@ -161,7 +161,5 @@ dependencies {
     testImplementation "androidx.test:core:$androidxTest"
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
-    androidTestImplementation "androidx.test.ext:junit:$androidxTest"
-    androidTestImplementation "androidx.test:rules:$androidxTestRules"
     testImplementation "androidx.arch.core:core-testing:$archCompomentVersion"
 }
