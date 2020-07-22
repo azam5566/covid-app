@@ -389,6 +389,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
     override fun viewModelListener() {
     }
 
+    @Suppress("unused", "UNUSED_VARIABLE")
     @TestOnly
     fun setTestViewModel(testViewModel: DashboardViewModel) {
         val viewModel = testViewModel
