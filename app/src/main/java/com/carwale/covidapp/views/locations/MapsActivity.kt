@@ -64,9 +64,7 @@ class MapsActivity : BaseActivity<ActivityMapsBinding, MapViewModel>(), OnMapRea
             startActivityForResult(intent, AUTOCOMPLETE_REQUEST_CODE)
         }
         mBinding.setLocation.setOnClickListener {
-            if (SharedPref.getInstance().getStringPreference(Constants.Location.COUNTRY_NAME)
-                    .isNotEmpty()
-            ) {
+            if (SharedPref.getInstance().getStringPreference(Constants.Location.COUNTRY_NAME).isNotEmpty()) {
                 if (fromApp) {
                     finish()
                 } else {

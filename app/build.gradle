@@ -80,6 +80,10 @@ ext {
     androidXTestExtKotlinRunnerVersion = '1.1.1'
     androidXTestRulesVersion = '1.2.0-beta01'
     robolectricVersion = '4.3-beta-1'
+    androidxTest = "1.2.0"
+    mockitoKotlinVersion = "2.2.0"
+    androidxTestRules = "1.0.2-beta1"
+    archCompomentVersion = "2.1.0"
 }
 
 dependencies {
@@ -153,11 +157,11 @@ dependencies {
     implementation 'com.google.android.libraries.places:places:2.3.0'
 
     // AndroidX Test - JVM testing
-    testImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
 
-    testImplementation "androidx.test:core-ktx:$androidXTestCoreVersion"
-
+    testImplementation "androidx.test:core:$androidxTest"
     testImplementation "org.robolectric:robolectric:$robolectricVersion"
-
-    androidTestImplementation 'org.mockito:mockito-android:2.7.22'
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVersion"
+    androidTestImplementation "androidx.test.ext:junit:$androidxTest"
+    androidTestImplementation "androidx.test:rules:$androidxTestRules"
+    testImplementation "androidx.arch.core:core-testing:$archCompomentVersion"
 }
