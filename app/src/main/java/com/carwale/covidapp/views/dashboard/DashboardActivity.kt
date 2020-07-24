@@ -40,7 +40,7 @@ class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewMo
         })
 
         userDao.getLiveDataGlobalData().observe(this, Observer {
-            mBinding.lastUpdated.text = "Last updated at " + it.lastApiCalled?.toDateFormat(READABLE_FORMAT_WITH_DATE)
+            mBinding.lastUpdated.text = "Last updated at " + it?.lastApiCalled?.toDateFormat(READABLE_FORMAT_WITH_DATE)
         })
 
         mBinding.apply {
