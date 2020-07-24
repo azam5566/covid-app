@@ -23,11 +23,12 @@ class SplashViewModel : BaseViewModel() {
                     val res = response.body()
 
                     CoroutineScope(Dispatchers.IO).launch {
-                        res?.globalData?.toEntity()?.let { userDao.insertGlobalData(it) }
+                        userDao.deleteGlobalData()
 
                         res?.countriesData?.map { it.toEntity() }?.let {
                             userDao.insertCountriesData(it)
                         }
+                        res?.globalData?.toEntity()?.let { userDao.insertGlobalData(it) }
                     }
 
                 }

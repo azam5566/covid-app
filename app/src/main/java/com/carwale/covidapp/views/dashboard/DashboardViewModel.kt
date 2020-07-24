@@ -4,6 +4,7 @@ import android.os.Handler
 import android.util.EventLog
 import com.carwale.covidapp.base.BaseViewModel
 import com.carwale.covidapp.models.DataResponse
+import com.carwale.covidapp.room.AppDB
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -26,11 +27,12 @@ class DashboardViewModel : BaseViewModel(){
                         val res = response.body()
 
                         CoroutineScope(Dispatchers.IO).launch {
-                            res?.globalData?.toEntity()?.let { userDao.insertGlobalData(it) }
-
+                            userDao.deleteGlobalData()
                             res?.countriesData?.map { it.toEntity() }?.let {
                                 userDao.insertCountriesData(it)
                             }
+
+                            res?.globalData?.toEntity()?.let { userDao.insertGlobalData(it) }
                         }
                     }
                 })
