@@ -12,6 +12,8 @@
 - [Stetho](https://github.com/facebook/stetho) for debugging persistence data & network packets
 
 ## Screenshots
+![Image1](https://github.com/shaikh7862/covid-app/blob/master/Image1.jpeg)
+
 <p align="center">
   <img src="https://github.com/shaikh7862/covid-app/blob/master/Image1.jpeg" width="300">
   <img src="https://github.com/shaikh7862/covid-app/blob/master/Image2.jpeg" width="300">
