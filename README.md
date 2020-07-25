@@ -10,3 +10,10 @@
 - [Retrofit2 & Gson](https://github.com/square/retrofit) for constructing the REST API
 - [OkHttp3](https://github.com/square/okhttp) for implementing interceptor
 - [Stetho](https://github.com/facebook/stetho) for debugging persistence data & network packets
+
+## Screenshots
+<p align="center">
+  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image1.jpeg" width="200">
+  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image2.jpeg" width="200">
+  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image3.jpeg" width="200">
+</p>
