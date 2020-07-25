@@ -13,7 +13,7 @@
 
 ## Screenshots
 <p align="center">
-  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image1.jpeg" width="200">
-  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image2.jpeg" width="200">
-  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image3.jpeg" width="200">
+  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image1.jpeg" width="300">
+  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image2.jpeg" width="300">
+  <img src="https://github.com/shaikh7862/covid-app/blob/master/Image3.jpeg" width="300">
 </p>
