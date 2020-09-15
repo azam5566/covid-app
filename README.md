@@ -1,4 +1,4 @@
-# Covid App (Test)
+# Covid App - Kotlin (Test)
 
 ## Spec
 - Minimum SDK 21
