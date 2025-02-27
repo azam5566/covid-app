@@ -14,7 +14,7 @@
 ## Screenshots
 
 <p align="center">
-  <img src="https://shaikh7862.github.io/Images/CovidApp/Image1.jpeg" width="300">
-  <img src="https://shaikh7862.github.io/Images/CovidApp/Image2.jpeg" width="300">
-  <img src="https://shaikh7862.github.io/Images/CovidApp/Image3.jpeg" width="300">
+  <img src="https://azam5566.github.io/Images/CovidApp/Image1.jpeg" width="300">
+  <img src="https://azam5566.github.io/Images/CovidApp/Image2.jpeg" width="300">
+  <img src="https://azam5566.github.io/Images/CovidApp/Image3.jpeg" width="300">
 </p>
